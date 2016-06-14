@@ -1,0 +1,20 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Ben Forshey	Designer / Developer	@benforshey
+
+# THANKS
+
+	JavaScriptKata, for a brilliantly simple way to determine leap years.
+
+# TECHNOLOGY COLOPHON
+
+	SCSS / CSS3
+	HTML5
+	JavaScript
+    Sublime Text 3
+
+
+	

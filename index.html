@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>YYDDD - A Date Calculator | Ben Forshey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Get today's date in Year Year Day Day Day format, based on your device's time settings.">
+    <!--Bing Auth-->
+    <meta name="msvalidate.01" content="9E7B8B29751F45C7B81F5D675EB429A5" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://www.YYDDD.info/favicon.ico">
+    <!--Chrome / Android-->
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <!--Safari / iOS-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="YYDDD">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <!--Windows-->
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#6d8d74">
+    <!-- OpenGraph -->
+    <meta property="og:title" content="YYDDD - A Date Calculator | Ben Forshey">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://www.YYDDD.info/mstile-310x310.png">
+    <meta property="og:url" content="http://www.YYDDD.info">
+    <meta property="og:description" content="Get today's date in Year Year Day Day Day format, based on your device's time settings.">
+    <style type="text/css" media="screen">
+        @font-face{font-family:'Lustria';font-style:normal;font-weight:400;src:local("Lustria"),local("Lustria-Regular"),url(http://fonts.gstatic.com/s/lustria/v4/d0ry5Iqgee_DL3TNo0TPAwLUuEpTyoUstqEm5AMlJo4.ttf) format("truetype")}html{background:-webkit-linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(../img/swirl_pattern.png) center center repeat;background:linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),url(../img/swirl_pattern.png) center center repeat;box-sizing:border-box;font:400 1.25em / 1.6 "Lustria", serif;overflow-wrap:break-word;word-wrap:break-word}h1,h2,h3,h4{color:#4E5C5F;font:500 3.157em/1.5 "Lustria",serif}h2{font-size:2.369em}h3{font-size:1.777em}h4{font-size:1.333em}.YYDDD-text{border-bottom:4px solid #6D8D74;border-top:4px solid #6D8D74;color:#945252;display:block;font-size:7em;text-align:center}.content-bounding{margin:0 auto;max-width:30em}@media screen and (max-width: 30em){html{font:500 1.125em/1.6 "LustriaRegular",serif}h1,h2,h3,h4{color:#4E5C5F;font:500 2.369em/1.5 "LustriaRegular",serif}h2{font-size:1.777em}h3,h4{font-size:1.333em}.YYDDD-text{font-size:6em}}@media screen and (max-width: 25em){html{font:500 1em/1.6 "LustriaRegular",serif}h1,h2,h3,h4{color:#4E5C5F;font:500 2.369em/1.5 "LustriaRegular",serif}h2{font-size:1.777em}h3,h4{font-size:1.333em}.YYDDD-text{font-size:5em}}
+    </style>
+</head>
+<body>
+    <div class="content-bounding">
+        <h1 class="content-header">Today's Date:</h1>
+        <span class="YYDDD-text">-----</span>
+        <h2>The Rest:</h2>
+        <p>The date displayed is calculated from your device's time settings.</p>
+    </div>
+    <script>
+        var setDays=function(){var e=[],t=new Date,r=t.getFullYear(),n=29===new Date(r,1,29).getDate();return e=n?[31,29,31,30,31,30,31,31,30,31,30,31]:[31,28,31,30,31,30,31,31,30,31,30,31]},calcDaysPreceding=function(e,t){for(var r=0,n=0,a=t;a>n;n+=1)r+=e[n];return r},getDayOfYear=function(){var e=setDays(),t=0,r=0,n=new Date,a=n.getMonth(),D=n.getDate();return a>0?(r=calcDaysPreceding(e,a),t=r+D):t=D,t=100>t?"0"+t.toString():t.toString()},getYear=function(){var e=new Date,t=e.getFullYear().toString().slice(-2);return t},writeYYDDD=function(e){var t=document.querySelector(e);t.innerHTML=getYear()+getDayOfYear()};setInterval(function(){writeYYDDD(".YYDDD-text")},1e3);
+    </script>
+    <!-- Analytics Script -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-46526870-8', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

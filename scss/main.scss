@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Lustria';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lustria'), local('Lustria-Regular'), url(http://fonts.gstatic.com/s/lustria/v4/d0ry5Iqgee_DL3TNo0TPAwLUuEpTyoUstqEm5AMlJo4.ttf) format('truetype');
+}
+
+html {
+  background:
+    linear-gradient(
+        rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)
+    ), url(../img/swirl_pattern.png) center center repeat;
+  box-sizing: border-box;
+  font: 400 1.25em / 1.6 "Lustria", serif;
+  overflow-wrap: break-word;
+  word-wrap: break-word
+}
+h1,
+h2,
+h3,
+h4 {
+  color: #4E5C5F;
+  font: 500 3.157em / 1.5 "Lustria", serif
+}
+h2 {
+  font-size: 2.369em
+}
+h3 {
+  font-size: 1.777em
+}
+h4 {
+  font-size: 1.333em
+}
+
+.YYDDD-text {
+  border-bottom: 4px solid #6D8D74;
+  border-top: 4px solid #6D8D74;
+  color: #945252;
+  display: block;
+  font-size: 7em;
+  text-align: center;
+}
+
+.content-bounding {
+  margin: 0 auto;
+  max-width: 30em
+}
+
+@media screen and (max-width: 30em) {
+  html {
+    font: 500 1.125em / 1.6 "LustriaRegular", serif
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #4E5C5F;
+    font: 500 2.369em / 1.5 "LustriaRegular", serif
+  }
+  h2 {
+    font-size: 1.777em
+  }
+  h3,
+  h4 {
+    font-size: 1.333em
+  }
+  .YYDDD-text {
+    font-size: 6em;
+  }
+}
+
+@media screen and (max-width: 25em) {
+  html {
+    font: 500 1em / 1.6 "LustriaRegular", serif
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #4E5C5F;
+    font: 500 2.369em / 1.5 "LustriaRegular", serif
+  }
+  h2 {
+    font-size: 1.777em
+  }
+  h3,
+  h4 {
+    font-size: 1.333em
+  }
+  .YYDDD-text {
+    font-size: 5em;
+  }
+}
