@@ -40,7 +40,9 @@ var getDayOfYear = function () {  // get, stringify, and format day of year
     dayOfYear = currentDay
   }
 
-  if (dayOfYear < 100) {  // convert to string for later concatenation
+  if (dayOfYear < 10) {
+    dayOfYear = '00' + dayOfYear.toString()
+  } else if (dayOfYear < 100) {
     dayOfYear = '0' + dayOfYear.toString()
   } else {
     dayOfYear = dayOfYear.toString()
@@ -65,3 +67,5 @@ var writeYYDDD = function (containerClass) {  // write the YYDDD to the HTML
 setInterval(function () {  // call once per second
   writeYYDDD('.YYDDD-text')
 }, 1000)
+
+writeYYDDD('.YYDDD-text')  // call initially

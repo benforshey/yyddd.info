@@ -50,7 +50,7 @@
         <p>The date displayed is calculated from your device's time settings.</p>
     </div>
     <script>
-        var setDays=function(){var e=[],t=new Date,r=t.getFullYear(),n=29===new Date(r,1,29).getDate();return e=n?[31,29,31,30,31,30,31,31,30,31,30,31]:[31,28,31,30,31,30,31,31,30,31,30,31]},calcDaysPreceding=function(e,t){for(var r=0,n=0,a=t;a>n;n+=1)r+=e[n];return r},getDayOfYear=function(){var e=setDays(),t=0,r=0,n=new Date,a=n.getMonth(),D=n.getDate();return a>0?(r=calcDaysPreceding(e,a),t=r+D):t=D,t=100>t?"0"+t.toString():t.toString()},getYear=function(){var e=new Date,t=e.getFullYear().toString().slice(-2);return t},writeYYDDD=function(e){var t=document.querySelector(e);t.innerHTML=getYear()+getDayOfYear()};setInterval(function(){writeYYDDD(".YYDDD-text")},1e3);
+        var setDays=function(){var e=[],t=new Date,r=t.getFullYear(),n=29===new Date(r,1,29).getDate();return e=n?[31,29,31,30,31,30,31,31,30,31,30,31]:[31,28,31,30,31,30,31,31,30,31,30,31]},calcDaysPreceding=function(e,t){for(var r=0,n=0,a=t;a>n;n+=1)r+=e[n];return r},getDayOfYear=function(){var e=setDays(),t=0,r=0,n=new Date,a=n.getMonth(),D=n.getDate();return a>0?(r=calcDaysPreceding(e,a),t=r+D):t=D,t=10>t?"00"+t.toString():100>t?"0"+t.toString():t.toString()},getYear=function(){var e=new Date,t=e.getFullYear().toString().slice(-2);return t},writeYYDDD=function(e){var t=document.querySelector(e);t.innerHTML=getYear()+getDayOfYear()};setInterval(function(){writeYYDDD(".YYDDD-text")},1e3),writeYYDDD(".YYDDD-text");
     </script>
 </body>
 </html>
